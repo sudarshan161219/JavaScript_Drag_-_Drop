@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #F9F9F9;
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+}
+
+.draggable-list{
+    color: #34444f;
+    padding: 0;
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+.draggable-list li{
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.draggable-list li:hover {
+    transition: all 0.4s;
+    transform: scale(1.1);
+    background-color: #EEF1FF;
+}
+
+
+
+.draggable-list .number{
+    background-color: #c3c7ca;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+
+}
+
+.draggable-list li.over .draggable{
+    background-color: #eaeaea;
+}
+
+.draggable-list .person-name{
+    margin: 0 20px 0 0;
+}
+
+.draggable-list li.right .person-name{
+color:#06FF00;
+}
+
+.draggable-list li.wrong .person-name{
+    color:#FF1E00;
+    }
+    
+
+.draggable{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex: 1;
+}
+
+.fas{
+    margin-left: 0.5rem;
+}
+
+/* CSS */
+.button-86 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.button-86:active{
+    transition: all 0.3s;
+    transform: scale(0.95);
+}
